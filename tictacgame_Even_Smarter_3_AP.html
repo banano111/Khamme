@@ -1,3 +1,9 @@
+<!-- Alumno: Alan Arturo Pedraza Luna
+     Materia: Programacion Orientada a Objetos
+     Fecha: 2 Diciembre 2019
+     Descripcion: Programa de Juego del Gato-->
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,13 +58,13 @@
         
         function writetext(num){
         switch(num){
-        case 1: content='This game is a draw';
+        case 1: content='Empate';
         break;
-        case 2: content='The computer won this round.';
+        case 2: content='Gano la Computadora';
         break;
-        case 3: content='You won this round.';
+        case 3: content='GANASTE!! :)';
         break;
-        case 4: content='LEVEL: '+level+'\n\nComputer Wins:  This level- '+pcwins[level]+'  (Total: '+(pcwins[0]+pcwins[1]+pcwins[2]+pcwins[3])+')\nPlayer Wins  :  This level- '+playerwins[level]+'  (Total: '+(playerwins[0]+playerwins[1]+playerwins[2]+playerwins[3])+')\nDraws        :  This level- '+draws[level]+'  (Total: '+(draws[0]+draws[1]+draws[2]+draws[3])+')';
+        case 4: content='NIVEL: '+level+'\n\nVictorias Computadora:  Este Nivel- '+pcwins[level]+'  (Total: '+(pcwins[0]+pcwins[1]+pcwins[2]+pcwins[3])+')\nVictorias Jugador  :  Este Nivel- '+playerwins[level]+'  (Total: '+(playerwins[0]+playerwins[1]+playerwins[2]+playerwins[3])+')\nEmpates        :  Este Nivel- '+draws[level]+'  (Total: '+(draws[0]+draws[1]+draws[2]+draws[3])+')';
         break;
         }
         
@@ -74,7 +80,7 @@
         }}
         
         function setbutton(cellnum){
-        if (!iswon){ 			// Thanks to Roger for finding this Bug !!!
+        if (!iswon){ 
         if(moves[cellnum]==0){
         document.images['rc'+cellnum].src="ex.gif";
         document.images['rc'+cellnum].alt=" X ";
@@ -82,7 +88,7 @@
         game[done]=cellnum;
         done++;
         findwinner(true);
-        }else alert('You cannot move here!');
+        }else alert('No puedes moverte aqui');
         }}
         
         function pcstrategy(istowin){
@@ -129,7 +135,7 @@
         myway=21;
         }
         else if (game[1]==11 || game[1]==13 || game[1]==31 || game[1]==33){
-        selecCorner("empty");
+        selecCorner("Vacio");
         myway=22;
         }
         else{
@@ -267,10 +273,10 @@
         <form name="scores"><textarea name="scores2" cols="60" rows="6" ></textarea>
         
         <br><br>
-        <input type="radio" name="level" id="level" onclick="setlevel(0)">level 0 --  the Computer is totally dumb. <br>
-        <input type="radio" name="level" id="level" onclick="setlevel(1)" checked>level 1 --  Computer is smarter (original version). <br>
-        <input type="radio" name="level" id="level" onclick="setlevel(2)">level 2 --  You MAY win (only when you start). <br>
-        <input type="radio" name="level" id="level" onclick="setlevel(3)">level 3 --  Computer NEVER lose. <br>
+        <input type="radio" name="level" id="level" onclick="setlevel(0)">Nivel 0 - Extra Facil<br>
+        <input type="radio" name="level" id="level" onclick="setlevel(1)" checked>Nivel 1 - Version Original <br>
+        <input type="radio" name="level" id="level" onclick="setlevel(2)">Nivel 2 - Podrias Ganar Solo Al Comienzo<br>
+        <input type="radio" name="level" id="level" onclick="setlevel(3)">Nivel 3 - La computadora NUNCA pierde<br>
         
         </form>
 </body>
